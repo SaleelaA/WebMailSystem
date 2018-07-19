@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates sallela page 
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Register an Online Account</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+
+    </h:head>
+    <h:body style="background-image: url(blue.jpg)" >
+
+        <h:form>
+            <h2> <center>Create a new online email account!</center></h2>
+
+            <p> <center> <h3>Please enter your new email ID: </h3> <br></br>
+                    <h:inputText id="username" required ="true" 
+                                 requiredMessage="The email ID field cannot be empty"
+                                 title="Please enter your email ID"
+                                 value="#{registration.username}"
+                                 validatorMessage="Please use a correct format 
+                                 for your email ID">
+                        <f:validateLength maximum="10" minimum="3" />
+                        <f:validateRegex pattern="\S*(\S*([a-zA-Z]\S*[0-9])|([0-9]\S*[a-zA-Z]))\S*" />
+
+                       </h:inputText>
+                </center>
+            </p>
+
+
+            <p> <center> <h3>Please enter your selected password:</h3> <br></br>
+                    <h:inputText id="password" required ="true" 
+                                 requiredMessage="The password field cannot be empty"
+                                 title="Please enter your password"
+                                 value="#{registration.password}"
+                                 validatorMessage="The length of your 
+                                 password must be between 3 and 20.">
+                        <f:validateLength maximum="20" minimum="3" />
+                    </h:inputText>
+                </center>
+            </p>
+
+
+            <p> <center> <h3>Please enter your Name:</h3> <br></br>
+                    <h:inputText id="name" required ="true" 
+                                 requiredMessage="The Name field cannot be empty"
+                                 title="Please enter your Name"
+                                 value="#{registration.name}"
+                                 validatorMessage="The length of your selected 
+                                 Name must be between 3 and 50.">
+                        <f:validateLength maximum="50" minimum="2" />
+                    </h:inputText>
+                </center>
+            </p>
+
+
+            <p> <center>
+                    <h:commandButton id="submit" value="Submit"
+                                     action="confirmation1" />
+                </center>
+            </p>
+
+        </h:form>
+
+    </h:body>
+</html>

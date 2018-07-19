@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates divya page
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Welcome</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body style="background-image: url(blue.jpg)" >
+        <h:form> 
+            <div><p>Welcome, #{login.theLoginAccount.name}</p></div>
+            <p>
+               Number of email(s): #{login.theLoginAccount.inbox.size()}
+            <h:dataTable id="inbox" 
+                         rows ="#{login.theLoginAccount.inbox.size()}" 
+                         value="#{login.theLoginAccount.inbox}" var="emailObj">  
+                
+                
+                <h:column>  
+                    <h:commandLink value="#{emailObj.subject}" action="#{login.theLoginAccount.getEmailByID(emailObj.id)}"/>
+                </h:column>
+                    
+                 
+            </h:dataTable>         
+            </p>
+            <p>
+           
+               <h:commandButton id="SignOut" value="Sign Out"  
+                                action="#{login.theLoginAccount.signOut()}" />    
+            </p>
+
+        </h:form>
+    </h:body>
+</html>

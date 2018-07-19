@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates sallela page 
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Reply </title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+
+    </h:head>
+    <h:body style="background-image: url(blue.jpg)" >
+
+        <h:form>
+
+
+            <h3>Please enter your reply mail: </h3> <br></br>
+             <h:inputText  id="reply" required ="true" 
+                         requiredMessage="The reply field cannot be empty"
+                         title="Please enter your reply mail"
+                         value="#{newMail}" />
+
+                  
+
+
+           
+
+
+
+
+
+            <center>
+                <h:commandButton id="submit" value="Submit" 
+                                 action="#{login.theLoginAccount.reply
+                                           (login.theLoginAccount.readSelectedEmail())}" />
+            </center>
+
+
+        </h:form>
+
+    </h:body>.
+</html>

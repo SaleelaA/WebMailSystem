@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates divya page
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Login</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+    </h:head>
+    <h:body style="background-image: url(blue.jpg)" >
+
+        <h:form>
+            <center> <h2>Login Your Email Account!</h2> </center>
+
+            <p>  <center><h3>Please enter your Email ID: </h3> <br></br> 
+                    <h:inputText id="id" required ="true" 
+                                 requiredMessage="The ID field cannot be empty"
+                                 title="Please enter your ID"
+                                 value="#{login.id}"
+                                 validatorMessage="The ID must be between 3 and 20 characters">
+                        <f:validateLength maximum="20" minimum="3" />
+                    </h:inputText>
+                </center>
+            </p>
+
+            <p> <center> <h3>Please enter your password: </h3><br></br> 
+                    <h:inputText id="psw" required ="true" 
+                                 requiredMessage="The password field cannot be empty"
+                                 title="Please enter your psw"
+                                 value="#{login.password}"/>
+                </center>
+            </p>
+            <p> <center>
+                    <h:commandButton id="submit" value="Submit" 
+                                     action="#{login.login()}" />
+                </center>
+            </p>
+
+        </h:form>
+
+    </h:body>
+</html>
